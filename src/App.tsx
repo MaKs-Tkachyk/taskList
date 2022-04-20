@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { ContentProvider } from "./UI/Components/ContentProvider/ContentProvider";
+import Filter from "./UI/Components/Filter/Filter";
+import ListOfUsers from "./UI/Components/ListOfUsers/ListOfUsers";
+import UserProfile from "./UI/Components/UserProfile/UserProfile";
+
 
 function App() {
+  //  let dste = new Date( "1993-07-20T09:44:18.674Z").toLocaleDateString().split(".");
+
+  // console.log(dste)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContentProvider>
+      <div className="wrapper">
+        <div className="container">
+          <Filter />
+          <ListOfUsers />
+          <UserProfile/>
+        </div>
+      </div>
+    </ContentProvider>
   );
 }
 

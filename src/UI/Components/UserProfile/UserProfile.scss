@@ -1,0 +1,87 @@
+@import "../../../source/objectStyle.scss";
+
+.UserProfile {
+  padding: 20px;
+  & > div:first-child {
+    width: 200px;
+    margin-bottom: 73px;
+  }
+}
+
+.UserProfile__characteristic {
+  margin-right: 47px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & div:last-child {
+    margin-top: 42px;
+    background-color: #e33030;
+    width: 100%;
+  }
+  & .UserProfile__picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  & .UserProfile__name {
+    @include styleText(34, 40, "Work Sans", normal, 700);
+    letter-spacing: -0.02em;
+    color: #121212;
+    margin: 16px 0 1px;
+  }
+  & .UserProfile__born {
+    @include styleText(12, 18, "Poppins", normal, 500);
+    color: #999999;
+  }
+}
+
+.UserProfile__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-form {
+  width: 448px;
+  & > div:not(:first-child) {
+    margin-top: 12px;
+  }
+  & input {
+    width: 100%;
+    padding: 14px;
+    @include styleText(16, 24, "Poppins", normal, 500);
+    height: 52px;
+    color: #121212;
+    background: #f3f3f3;
+    border: 1px solid #121212;
+    border-radius: 12px 0px 0px 12px;
+    &:focus {
+      background: #fff !important;
+    }
+  }
+}
+
+.user-field {
+  display: flex;
+  &  {
+    &.error input {
+      border: 1px solid #ff0000;
+    }
+  }
+  & button {
+    width: 143px;
+    padding: 12px 24px;
+    text-align: center;
+    background: #52228c;
+    border-radius: 0px 12px 12px 0px;
+    @include styleText(16, 24, "Poppins", normal, 500);
+    font-family: "Poppins";
+    color: #ffffff;
+  }
+}

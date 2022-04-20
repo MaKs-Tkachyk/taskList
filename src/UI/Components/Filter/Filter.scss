@@ -1,0 +1,85 @@
+@import "../../../source/objectStyle.scss";
+
+.filter {
+  width: 365px;
+}
+
+.title {
+  @include styleText(34, 40, "Work Sans", normal, 700);
+  margin-bottom: 32px;
+}
+
+.filter__menu {
+  border: 1px solid #f3f3f3;
+  border-radius: 12px;
+  padding: 27px 29px;
+  & .filter__parametrs:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  & p {
+    @include styleText(12, 18, "Poppins", normal, 500);
+    color: #999999;
+    margin-bottom: 7px;
+  }
+}
+
+.filter__treeSelect {
+  width: 100%;
+
+  & input {
+    height: 100% !important;
+  }
+  & .ant-select-arrow {
+    color: #000;
+    font-style: bold;
+  }
+}
+
+.ant-select-show-search.ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  height: 52px;
+  border: 1px solid #121212;
+  border-radius: 12px;
+  padding: 11px 11px;
+  color: #121212;
+  @include styleText(16, 24, "Poppins", normal, 500);
+}
+
+.filter__parametrs {
+  & .man {
+    padding: 8px 18px;
+    display: inline-block;
+    border: 1px solid #121212;
+    border-radius: 24px;
+    color: #333333;
+    @include styleText(14, 21, "Poppins", normal, 500);
+    cursor: pointer;
+    &.active {
+      color: #52228c;
+      background: #ecd3fa;
+      border: 1px solid #52228c;
+    }
+  }
+  & .man:last-child {
+    margin-left: 24px;
+  }
+  & > input {
+    width: 100%;
+    padding: 14px;
+    height: 52px;
+    border: 1px solid #121212;
+    border-radius: 12px;
+    @include styleText(16, 24, "Poppins", normal, 500);
+  }
+  & .ant-slider-rail {
+    background: #999999;
+    border-radius: 2px;
+  }
+  & .ant-slider-track,& .ant-slider:hover .ant-slider-track {
+    background: #52228c;
+}
+  & .ant-slider-handle {
+    background-color: #52228c;
+    border: solid 2px #52228c;
+}
+}

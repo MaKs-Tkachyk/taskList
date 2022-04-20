@@ -1,0 +1,12 @@
+@import "../../../source/objectStyle.scss";
+
+.button {
+  @include styleText(16, 24, "Poppins", normal, 500);
+  color: white;
+  padding: 12px 48px;
+  background: #52228c;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}

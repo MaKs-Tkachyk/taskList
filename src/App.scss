@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Work+Sans:wght@400;700&display=swap');
+@import "./source/nullstyle.scss";
+
+.container{
+    max-width: 1007px;
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-between;
+}

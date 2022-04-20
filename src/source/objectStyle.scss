@@ -1,0 +1,14 @@
+@mixin styleText($fz, $lh, $ff, $fs, $fw) {
+  font-size: ($fz/16) + rem;
+  line-height: ($lh/16) + rem;
+  font-family: $ff, sans-serif;
+  font-style: $fs;
+  font-weight: $fw;
+}
+
+%middle-height {
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translate(0, -50%);
+}

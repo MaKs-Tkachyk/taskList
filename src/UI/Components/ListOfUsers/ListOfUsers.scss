@@ -1,0 +1,103 @@
+@import "../../../source/objectStyle.scss";
+
+.list {
+  width: 575px;
+}
+.list__users {
+  max-height: 630px;
+  overflow: hidden;
+  overflow-y: auto;
+  & > div:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+.list__user {
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user__picture {
+  width: 85px;
+  height: 82px;
+  margin-right: 16px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.user__information {
+  display: flex;
+  align-items: center;
+}
+
+.user__characteristic {
+  & > div:not(:last-child) {
+    margin-bottom: 2px;
+  }
+  & .user__name,
+  & .user__place,
+  & .user__email {
+    @include styleText(20, 23, "Work Sans", normal, 700);
+    letter-spacing: -0.02em;
+    color: #121212;
+  }
+  & .user__born {
+    @include styleText(12, 18, "Poppins", normal, 500);
+    color: #999999;
+  }
+  & .user__place,
+  & .user__email {
+    @include styleText(13, 15, "Work Sans", normal, 400);
+  }
+}
+
+.pagination-button {
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid #121212;
+  border-radius: 24px;
+  @include styleText(14, 21, "Poppins", normal, 500);
+  text-align: center;
+  color: #333333;
+}
+
+.ant-pagination-item {
+  background: #ffffff;
+  border-radius: 24px;
+}
+
+.ant-pagination-item-active {
+  font-weight: 500;
+  border-color: #000;
+  background: #ecd3fa;
+  border: 1px solid #52228c;
+  box-sizing: border-box;
+  border-radius: 24px;
+  color: #52228c;
+  & > a {
+    color: #52228c;
+  }
+}
+
+.list-pagination {
+  margin-top: 27px;
+  display: flex;
+  justify-content: space-between;
+  & .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    width: 70px;
+    background: #ffffff;
+    border: 1px solid #121212;
+    box-sizing: border-box;
+    border-radius: 12px;
+    @include styleText(16, 24, "Poppins", normal, 500);
+    color: #121212;
+  }
+}
