@@ -5,6 +5,7 @@
 }
 .list__users {
   max-height: 630px;
+  min-height: 630px;
   overflow: hidden;
   overflow-y: auto;
   & > div:not(:last-child) {
@@ -60,7 +61,7 @@
 }
 
 .pagination-button {
-  padding: 8px 18px;
+  padding: 8px 10px;
   background: #ffffff;
   border: 1px solid #121212;
   border-radius: 24px;
@@ -92,7 +93,7 @@
   display: flex;
   justify-content: space-between;
   & .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    width: 70px;
+    width: 65px;
     background: #ffffff;
     border: 1px solid #121212;
     box-sizing: border-box;
@@ -100,4 +101,10 @@
     @include styleText(16, 24, "Poppins", normal, 500);
     color: #121212;
   }
+}
+
+.ant-spin-spinning {
+  position: relative;
+  top: 200px;
+  left: 50%;
 }

@@ -1,13 +1,27 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect} from "react";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { userListSlice } from "../../../Redux/reducers/userListSlice";
 import Button from "../../Elements/Button/Button";
 import ModulWindow from "../../Elements/ModalWindow/ModulWindow";
 import { ModalContext } from "../ContentProvider/ContentProvider";
 import "./UserProfile.scss";
-import UserProfileForm from "./UserProfileForm";
+import UserProfileForm from "./UseFormFrofile/UserProfileForm";
 
 const UserProfile: FC = () => {
 
     const modalParamets = useContext(ModalContext)
+    const dispatch = useAppDispatch()
+    const {userProfile} = useAppSelector(state=>state.userListSlice)
+   const {getUserProfile,deleteUser} = userListSlice.actions
+
+
+
+  useEffect(()=>{
+      dispatch(getUserProfile(modalParamets?.userId || "1"))  
+    },[modalParamets?.userId])
+
+
+  
 
   return (
     <ModulWindow>
@@ -17,15 +31,18 @@ const UserProfile: FC = () => {
           <div className="UserProfile__characteristic">
             <div className="UserProfile__picture">
               <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=-1&s=1"
-                alt=""
+                src={userProfile.picture}
+                alt={userProfile.name}
               />
             </div>
-            <div className="UserProfile__name">John Doe</div>
-            <div className="UserProfile__born">15 Oktober 1990</div>
-            <Button title="delete" />
+            <div className="UserProfile__name">{userProfile.name}</div>
+            <div className="UserProfile__born">{userProfile.date[1]}</div>
+            <Button click={()=>{
+             dispatch(deleteUser(modalParamets?.userId || "1")) 
+             modalParamets?.setModal(false)
+            }} title="delete" />
           </div>
-          <UserProfileForm />
+             <UserProfileForm {...userProfile}/>
         </div>
       </div>
     </ModulWindow>
